@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Team5 Key Visual</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --bg:#24425f; --bg2:#33597c; --panel:#f6f8fb; --ink:#0e1b2a; --muted:#6b7a8c;
+    --teal:#2bb3a3; --teal-soft:#d6f2ee; --amber:#f2a33a; --red:#e2574c; --line:#24384f; --white:#f3f6fa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1920px;height:1080px;overflow:hidden;background:var(--bg);font-family:Pretendard,"Malgun Gothic",sans-serif;color:var(--white)}
+  .stage{position:relative;width:1920px;height:1080px;
+    background:
+      radial-gradient(900px 600px at 78% 30%, rgba(43,179,163,.16), transparent 60%),
+      radial-gradient(700px 500px at 10% 90%, rgba(242,163,58,.08), transparent 60%),
+      linear-gradient(135deg,var(--bg) 0%,var(--bg2) 100%);}
+  .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:40px 40px}
+  /* left */
+  .left{position:absolute;left:110px;top:120px;width:820px}
+  .team{display:flex;align-items:center;gap:18px;font-size:24px;letter-spacing:.32em;font-weight:700;color:#cfd8e3}
+  .logo{width:58px;height:58px;border-radius:14px;background:var(--teal);display:grid;place-items:center}
+  .title{margin-top:44px;font-size:150px;line-height:1;font-weight:800;letter-spacing:-.03em}
+  .title span{font-weight:300;color:var(--teal)}
+  .eng{margin-top:22px;font-size:22px;letter-spacing:.38em;color:#9fb0c3;font-weight:600}
+  .head{margin-top:66px;font-size:46px;font-weight:800;line-height:1.3;letter-spacing:-.02em}
+  .sub{margin-top:10px;font-size:40px;font-weight:300;color:#c9d4e0;letter-spacing:-.02em}
+  .tags{margin-top:52px;display:flex;gap:14px;flex-wrap:wrap}
+  .tag{border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:12px 26px;font-size:24px;color:#dbe3ec}
+  .tag.on{background:var(--teal);border-color:var(--teal);color:#06231f;font-weight:700}
+  .steps{margin-top:60px;display:flex;align-items:flex-start;gap:6px}
+  .step{width:170px;text-align:center}
+  .num{width:62px;height:62px;margin:0 auto;border-radius:50%;border:2px solid rgba(255,255,255,.55);display:grid;place-items:center;font-size:22px;font-weight:600}
+  .step.on .num{background:var(--white);color:var(--ink);border-color:var(--white)}
+  .sname{margin-top:16px;font-size:26px;font-weight:800}
+  .sdesc{margin-top:8px;font-size:18px;color:#a9b7c7;line-height:1.45}
+  .arrow{margin-top:28px;width:34px;height:2px;background:rgba(255,255,255,.4);position:relative}
+  .arrow:after{content:"";position:absolute;right:-1px;top:-5px;border:6px solid transparent;border-left:8px solid rgba(255,255,255,.4)}
+  /* right */
+  .win{position:absolute;left:1000px;top:118px;width:820px;border-radius:18px;background:var(--panel);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.45);overflow:hidden}
+  .win{border-radius:10px}
+  .wtabs{height:42px;background:#dfe5ec;display:flex;align-items:flex-end;padding-left:10px}
+  .wtab{height:34px;width:300px;background:#f6f8fb;border-radius:9px 9px 0 0;display:flex;align-items:center;gap:9px;padding:0 14px;font-size:14px;color:#2a3644}
+  .wtab .x{margin-left:auto;font-size:11px;color:#6b7a8c}
+  .wplus{height:34px;width:34px;display:grid;place-items:center;font-size:20px;color:#5b6878}
+  .wctl{margin-left:auto;align-self:stretch;display:flex}
+  .wctl span{width:52px;display:grid;place-items:center}
+  .waddr{height:42px;background:#f6f8fb;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid #e3e8ef}
+  .nb{width:28px;text-align:center;font-size:16px;color:#5b6878}
+  .url{margin-left:8px;flex:1;height:28px;border-radius:999px;background:#e9eef4;font-size:14px;color:#5b6878;display:flex;align-items:center;padding-left:16px}
+  .nav{display:flex;align-items:center;gap:26px;padding:16px 26px;border-bottom:1px solid #e3e8ef;font-size:17px;color:#6b7a8c}
+  .nav b{color:var(--ink);font-size:22px;margin-right:14px;display:flex;align-items:center;gap:10px}
+  .nav .act{color:var(--ink);font-weight:700;border-bottom:3px solid var(--teal);padding-bottom:4px}
+  .flow{background:var(--bg);color:var(--white);padding:22px 26px 26px}
+  .flow h4{font-size:15px;color:#9fb0c3;font-weight:600}
+  .flow h3{margin-top:6px;font-size:26px;font-weight:800}
+  .stations{position:relative;margin-top:64px;display:flex;align-items:center;justify-content:space-between}
+  .stations:before{content:"";position:absolute;left:20px;right:20px;top:50%;height:3px;background:var(--line)}
+  .st{position:relative;z-index:1;width:118px;height:62px;border-radius:12px;background:#1d3148;border:1.5px solid #34506e;text-align:center;padding-top:9px}
+  .st b{display:block;font-size:20px}
+  .st small{font-size:13px;color:#a9b7c7}
+  .st.bn{background:#3a2a17;border-color:var(--amber)}
+  .st.bn b{color:var(--amber)}
+  .q{position:relative;z-index:1;width:44px;display:flex;flex-direction:column;align-items:center}
+  .q .v{font-size:13px;color:#cfd8e3;margin-bottom:5px;white-space:nowrap}
+  .q .b{width:22px;border-radius:4px;background:#d8c7a6}
+  .q{margin-top:-60px}
+  .flow .note{margin-top:14px;font-size:13px;color:#8a9bb0}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:20px 26px 24px}
+  .kpi{background:#fff;border:1px solid #e3e8ef;border-radius:12px;padding:14px 16px}
+  .kpi span{font-size:14px;color:var(--muted)}
+  .kpi div{margin-top:6px;font-size:34px;font-weight:800;letter-spacing:-.02em}
+  .kpi div small{font-size:16px;font-weight:600;color:var(--muted);margin-left:2px}
+  /* cards */
+  .card{position:absolute;background:var(--panel);color:var(--ink);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.4);padding:22px 24px}
+  .label{position:absolute;top:-22px;left:18px;background:var(--white);color:var(--ink);font-weight:800;font-size:19px;padding:9px 18px;border-radius:10px 10px 0 0}
+  .label.dark{background:#1d3148;color:var(--white)}
+  .c1{left:960px;top:742px;width:470px;height:270px}
+  .c2{left:1460px;top:742px;width:400px;height:270px}
+  .tl{display:flex;justify-content:space-between;align-items:flex-start;margin-top:8px;position:relative}
+  .tl:before{content:"";position:absolute;left:30px;right:30px;top:15px;height:3px;background:linear-gradient(90deg,#c7d0db,var(--teal))}
+  .tn{position:relative;z-index:1;width:132px;text-align:center}
+  .tn i{display:block;width:30px;height:30px;margin:0 auto;border-radius:50%;background:#c7d0db;border:4px solid var(--panel)}
+  .tn.mid i{background:#7cc9bf}
+  .tn.on i{background:var(--teal)}
+  .tn b{display:block;margin-top:8px;font-size:18px}
+  .tn small{display:block;margin-top:4px;font-size:13px;color:var(--muted);line-height:1.4}
+  .cmp{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cmp div{border-radius:10px;padding:10px 14px;background:#eef2f6}
+  .cmp div.on{background:var(--teal-soft)}
+  .cmp span{font-size:13px;color:var(--muted)}
+  .cmp p{font-size:22px;font-weight:800;margin-top:2px}
+  .cmp p em{font-style:normal;color:var(--teal)}
+  .grow{margin-top:26px}
+  .gbar{height:14px;border-radius:999px;background:linear-gradient(90deg,#d5dce5 0%,#7cc9bf 50%,var(--teal) 100%);position:relative}
+  .gbar:after{content:"";position:absolute;right:-4px;top:-6px;border:13px solid transparent;border-left:16px solid var(--teal);border-right:0}
+  .gtxt{margin-top:14px;display:flex;justify-content:space-between;align-items:baseline;font-size:16px;color:var(--muted)}
+  .gtxt b{font-size:22px;color:var(--ink)}
+  .loop .kpi div{font-size:28px}
+  .loop .kpi span{color:var(--teal);font-weight:700;letter-spacing:.08em;font-size:13px}
+  .loop .kpi p{margin-top:6px;font-size:14px;color:var(--muted)}
+  .sm{margin-top:6px;font-size:15px}
+  .sm div{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed #d6dde6}
+  .sm div:last-child{border-bottom:0}
+  .sm b{font-weight:700}
+  .sm code{font-family:Consolas,monospace;font-size:13px;color:#2a7f74;background:#e4f4f1;padding:3px 7px;border-radius:5px}
+  .foot{position:absolute;right:60px;bottom:22px;font-size:14px;color:#7f90a5}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="grid"></div>
+
+  <div class="left">
+    <div class="team">
+      <div class="logo"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#06231f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h5l4-12 5 16 4-10h6"/></svg></div>
+      TEAM 05 · 5팀
+    </div>
+    <div class="title">Re<span>Cast</span></div>
+    <div class="eng">BOTTLENECK · DELAY RE-FORECAST</div>
+    <div class="head">센서가 들어올 때마다,<br>지연 위험을 다시 계산합니다.</div>
+    <div class="sub">계획 시점 한 번으로 끝내지 않습니다.</div>
+    <div class="tags">
+      <div class="tag">공장 설계·센서</div>
+      <div class="tag">B·C 병목 정의</div>
+      <div class="tag on">시점별 재예측</div>
+      <div class="tag">Blind 검증</div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><div class="sname">설계</div><div class="sdesc">공장 배치<br>센서·Min/Max 정의</div></div>
+      <div class="arrow"></div>
+      <div class="step"><div class="num">02</div><div class="sname">분석</div><div class="sdesc">전체 피처 상관<br>기본 모델</div></div>
+      <div class="arrow"></div>
+      <div class="step on"><div class="num">03</div><div class="sname">선택·개선</div><div class="sdesc">중요도 Top 피처<br>공정 파생변수</div></div>
+      <div class="arrow"></div>
+      <div class="step"><div class="num">04</div><div class="sname">검증</div><div class="sdesc">Blind 평가<br>놓침·오경보 분석</div></div>
+    </div>
+  </div>
+
+  <div class="win">
+    <div class="wtabs">
+      <div class="wtab"><svg width="16" height="16" viewBox="0 0 30 30" fill="none" stroke="#2bb3a3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h5l4-12 5 16 4-10h6"/></svg>ReCast · 생산흐름 지연 재예측<span class="x">✕</span></div>
+      <div class="wplus">+</div>
+      <div class="wctl"><span>
+        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M1 6h10" stroke="#3a4656" stroke-width="1.2"/></svg></span><span>
+        <svg width="12" height="12" viewBox="0 0 12 12"><rect x="1.5" y="1.5" width="9" height="9" fill="none" stroke="#3a4656" stroke-width="1.2"/></svg></span><span class="close">
+        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M1.5 1.5l9 9M10.5 1.5l-9 9" stroke="#3a4656" stroke-width="1.2"/></svg></span></div>
+    </div>
+    <div class="waddr">
+      <span class="nb">←</span><span class="nb">→</span><span class="nb">⟳</span>
+      <div class="url">localhost:8501 / recast</div>
+    </div>
+    <div class="nav"><b><svg width="26" height="26" viewBox="0 0 30 30" fill="none" stroke="#2bb3a3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h5l4-12 5 16 4-10h6"/></svg>ReCast</b><span class="act">라인 흐름</span><span>Lot 재예측</span><span>병목 분석</span><span>센서 맵</span><span>검증</span></div>
+    <div class="flow">
+      <h4>L1 · L2 · L3 생산흐름 · Lot 단위 모니터링</h4>
+      <h3>병목은 B와 C 사이를 오갑니다</h3>
+      <div class="stations">
+        <div class="st"><b>A</b><small>사이클 측정</small></div>
+        <div class="q"><div class="v">대기</div><div class="b" style="height:44px"></div></div>
+        <div class="st bn"><b>B · 병목</b><small>사이클 측정</small></div>
+        <div class="q"><div class="v">대기</div><div class="b" style="height:40px"></div></div>
+        <div class="st bn"><b>C · 병목</b><small>사이클 측정</small></div>
+        <div class="q"><div class="v">대기</div><div class="b" style="height:20px"></div></div>
+        <div class="st"><b>D</b><small>사이클 측정</small></div>
+      </div>
+      <div class="note">막대 = 공정 앞 버퍼 대기 · 교체 · 설비 정지 · 자재 대기 이벤트를 함께 수집</div>
+    </div>
+    <div class="kpis loop">
+      <div class="kpi"><span>STEP 1</span><div>예측</div><p>Lot별 지연 위험 등급</p></div>
+      <div class="kpi"><span>STEP 2</span><div>확인</div><p>병목 공정·원인 후보</p></div>
+      <div class="kpi"><span>STEP 3</span><div>승인</div><p>관리자 검토</p></div>
+      <div class="kpi"><span>STEP 4</span><div>실행·평가</div><p>투입 순서 조정·결과 기록</p></div>
+    </div>
+  </div>
+
+  <div class="card c1">
+    <div class="label">시점별 재예측</div>
+    <div class="tl">
+      <div class="tn"><i></i><b>계획 시점</b><small>계획 정보</small></div>
+      <div class="tn mid"><i></i><b>B 진입</b><small>+ 교체·A/B 사이클<br>+ B 앞 대기</small></div>
+      <div class="tn on"><i></i><b>진행 중</b><small>+ 전체 센서</small></div>
+    </div>
+    <div class="grow">
+      <div class="gbar"></div>
+      <div class="gtxt"><span>입력 정보가 쌓일수록</span><b>위험 등급을 다시 계산</b></div>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <div class="label dark">센서 → 데이터 피처</div>
+    <div class="sm">
+      <div><b>사이클 카운터</b><code>station_*_cycle_sec</code></div>
+      <div><b>버퍼 진입·진출 리더</b><code>wait_before_*_min</code></div>
+      <div><b>설비 상태 신호</b><code>equipment_stop_min</code></div>
+      <div><b>자재 도착 이벤트</b><code>material_wait_min</code></div>
+      <div><b>품종 교체 이벤트</b><code>changeover_min</code></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
